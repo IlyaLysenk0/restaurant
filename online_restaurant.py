@@ -35,6 +35,9 @@ MARGANETS_COORDS = (47.6396, 34.6262)
 DNIPRO_COORDS = (48.4647, 35.0462)
 KYIV_RADIUS_KM = 20
 
+base = Base()
+base.create_db()
+
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -339,8 +342,6 @@ def logout():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    base = Base()
-    base.create_db()
     app.run(debug=True)
 
 
