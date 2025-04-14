@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    {% include '_navigation.html' %}
+    <p>Усі акрутальні позиції</p>
+    {%for position in all_positions%}
+        <div>
+            <img src="/static/menu/{{position.file_name}}">
+            <p>{{position.name}}</p>
+            <small>{{position.ingredients}}</small>
+            <button><a href="/position/{{position.name}}">Оглянути</a></button>
+        </div>
+    {%endfor%}
+</body>
+</html>

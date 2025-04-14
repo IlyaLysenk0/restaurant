@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    {% include '_navigation.html' %}
+    {%for i in us_orders%}
+        <p>Замовлення №{{i.id}}</p>
+        <button><a href="/my_order/{{i.id}}">Проглянути</a></button>
+    {%endfor%}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<h2>Реєстрація</h2>
+<body>
+    {% include '_navigation.html' %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="flash-messages">
+      <div class="alert">{{ messages[-1] }}</div>
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+<form action="/register" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <input type="text" name="nickname" placeholder="Nickname" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Зареєструватися</button>
+</form>
+</body>
+</html>

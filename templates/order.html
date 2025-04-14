@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    {% include '_navigation.html' %}
+    <img src="/static/images/{{product.image_filename}}">
+    <h3>{{product.name}}</h3>
+    <p>{{product.price}}₴</p>
+    <text>{{product.description}}</text>
+
+    <h4>Для замовлення.</h4>
+    <form method="post">
+        <p>Ваш номер телефону:</p>
+        <input type="text" name="phone">
+        <p>Адрес електроної скриньки:</p>
+        <input type="text" name="email">
+        <input type="submit" value="Замовити">
+    </form>
+    <p>*Після оформлення замовлення з вами зв'яжеться консультант</p>
+
+</body>
+</html>
