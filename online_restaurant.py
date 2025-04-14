@@ -15,7 +15,7 @@ from geopy.distance import geodesic
 
 app = Flask(__name__)
 
-FILES_PATH = '../static/menu'
+FILES_PATH = 'static/menu'
 
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB
 app.config['MAX_FORM_MEMORY_SIZE'] = 1024 * 1024  # 1MB
