@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 
 from flask_login import login_required, current_user, login_user, logout_user # pip install flask-login
 
-from online_restaurant_db import Session, Users, Menu, Orders, Reservation
+from online_restaurant_db import Session, Users, Menu, Orders, Reservation, Base
 from flask_login import LoginManager
 from datetime import datetime
 
@@ -339,6 +339,8 @@ def logout():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
+    base = Base()
+    base.create_db()
     app.run(debug=True)
 
 
@@ -362,10 +364,4 @@ if __name__ == '__main__':
 # /login              1
 
 
-# Аккаунти;
 
-# Admin
-# qwerty
-
-# user_1
-# 12345
